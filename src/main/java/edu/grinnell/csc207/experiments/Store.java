@@ -4,6 +4,7 @@ import edu.grinnell.csc207.store.Item;
 import edu.grinnell.csc207.store.BulkItem;
 import edu.grinnell.csc207.store.Purchase;
 import edu.grinnell.csc207.store.StoreUtils;
+import edu.grinnell.csc207.store.Multiple;
 
 import java.io.PrintWriter;
 
@@ -28,6 +29,7 @@ public class Store {
           new Item("penny candy", "imaginary", 1),
           new Item("Bowling Ball", "rolls", 500),
           new BulkItem("saffron", "yellow", "gram", 1111, 2),
+          new Multiple("Nail", "stick things together", 002, 63)
         });
     pen.close();
   } // main(String[])
