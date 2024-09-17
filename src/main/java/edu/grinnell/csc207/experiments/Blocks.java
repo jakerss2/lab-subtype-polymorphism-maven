@@ -9,6 +9,7 @@ import edu.grinnell.csc207.blocks.Line;
 import edu.grinnell.csc207.blocks.Rectangle;
 // import edu.grinnell.csc207.blocks.Surrounded;
 // import edu.grinnell.csc207.blocks.VerticalCompositionLeft;
+import edu.grinnell.csc207.blocks.Surrounded;
 
 import java.io.PrintWriter;
 
@@ -81,6 +82,17 @@ public class Blocks {
     AsciiBlock b9 = new Boxed(b8);
     AsciiBlock.print(pen, b9);
 
+    separator(pen);
+    pen.printf("new Surrounded(new Line(\"A\"), '*') \n");
+    AsciiBlock.print(pen, new Surrounded(new Line("A"), '*'));
+
+    separator(pen);
+    pen.printf("new Surrounded(new Surrounded(new Line(\"A\"), ' '), '*')) \n");
+    AsciiBlock.print(pen, new Surrounded(new Surrounded(new Line("A"), ' '), '*'));
+
+    separator(pen);
+    pen.printf("new Surrounded(new Surrounded(new Line(\"A\"), 'B'), 'C')) \n");
+    AsciiBlock.print(pen, new Surrounded(new Surrounded(new Line("A"), 'B'), 'C'));
 
     pen.close();
   } // main(String[])
