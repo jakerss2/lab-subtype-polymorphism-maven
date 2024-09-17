@@ -4,6 +4,7 @@ package edu.grinnell.csc207.blocks;
  * A text block surrounded by a box.
  *
  * @author Samuel A. Rebelsky
+ * @author Jacob Bell and Myles BP maybe?
  */
 public class Boxed implements AsciiBlock {
   // +-----------+---------------------------------------------------
