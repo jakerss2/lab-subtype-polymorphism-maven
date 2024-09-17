@@ -4,7 +4,7 @@ package edu.grinnell.csc207.blocks;
  * The center-aligned horizontal composition of two blocks.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Jacob Bell and Myles BP
  */
 public class HorizontalCompositionCenter implements AsciiBlock {
   // +--------+------------------------------------------------------------
@@ -54,7 +54,31 @@ public class HorizontalCompositionCenter implements AsciiBlock {
    *   if i is outside the range of valid rows.
    */
   public String row(int i) throws Exception {
-    throw new Exception("Not yet implemented"); // STUB
+    int difference;
+    int leftBig = 0;
+    int rightBig;
+    if (this.left.height() > this.right.height()){
+      difference = (this.left.height() - this.right.height()) / 2;
+      leftBig = 1; 
+    } else {
+      difference = (this.right.height() - this.left.height()) / 2;
+    }
+    if ((i < 0) || (i >= this.height())) {
+      // Outside of normal bounds
+      throw new Exception("Invalid row " + i);
+    } else if (i < difference) { // WE ALSO REALIZE THAT WE CAN USE AN OR STATEMENT TO CHECK THE ENDING TOO.
+        if (leftBig == 1){
+          return this.left.row(i) + " ".repeat(this.right.width()); // WE FINISHED LAB HERE
+        }
+      // Inside both left and right bounds
+      return this.left.row(i) + this.right.row(i);
+    } else if (i < this.right.height()) {
+      // Inside right bounds, outside left bounds
+      return " ".repeat(this.left.width()) + this.right.row(i);
+    } else {
+      // Inside left bounds, outside right bounds
+      return this.left.row(i) + " ".repeat(this.right.width()); 
+    } // if/else
   } // row(int)
 
   /**
