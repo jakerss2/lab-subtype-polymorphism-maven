@@ -4,7 +4,7 @@ package edu.grinnell.csc207.blocks;
  * The top-aligned horizontal copmosition of two blocks.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Jacob Bell and Myles BP
  */
 public class HorizontalCompositionTop implements AsciiBlock {
   // +--------+------------------------------------------------------------
@@ -65,7 +65,7 @@ public class HorizontalCompositionTop implements AsciiBlock {
       return " ".repeat(this.left.width()) + this.right.row(i);
     } else {
       // Inside left bounds, outside right bounds
-      return this.left.row(i);
+      return this.left.row(i) + " ".repeat(this.right.width()); 
     } // if/else
   } // row(int)
 

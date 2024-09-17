@@ -110,6 +110,19 @@ public class Blocks {
     separator(pen);
     AsciiBlock.print(pen, new HorizontalCompositionTop(exes, exes));
 
+    AsciiBlock comp1 =
+      new HorizontalCompositionTop(exes, new HorizontalCompositionTop(ohs, exes));
+    AsciiBlock comp2 =
+      new HorizontalCompositionTop(new HorizontalCompositionTop(exes, ohs), exes);
+
+    separator(pen);
+    AsciiBlock.print(pen, comp1);
+
+    separator(pen);
+    AsciiBlock.print(pen, comp2);
+
+
+
     pen.close();
   } // main(String[])
 } // class Blocks
